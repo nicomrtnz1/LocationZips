@@ -2,7 +2,6 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/titleConstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -25,23 +24,53 @@
         app:layout_constraintTop_toBottomOf="@+id/titleImage" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="158dp"
-        android:layout_height="157dp"
+        android:id="@+id/lgCircle"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:contentDescription="@null"
         app:layout_constraintBottom_toTopOf="@+id/startButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cirle" />
+        app:layout_constraintVertical_bias="0.493"
+        app:srcCompat="@drawable/circle" />
+
+    <ImageView
+        android:id="@+id/smCircle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".491"
+        app:srcCompat="@drawable/circle" />
+
+    <ImageView
+        android:id="@+id/bgCircle"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintEnd_toEndOf="@+id/titleImage"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/titleImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.488"
+        app:srcCompat="@drawable/circle" />
 
     <ImageView
         android:id="@+id/titleImage"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/image_header_height"
         android:scaleType="fitCenter"
+        android:contentDescription="@string/logo"
         app:layout_constraintBottom_toTopOf="@+id/startButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/iron_man_arc_reactor" />
