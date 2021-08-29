@@ -22,6 +22,8 @@ class ZipCodeAdapter(private val zips: List<String>): RecyclerView.Adapter<ZipCo
         with(holder.binding){
             if (position%2 === 0){
                 zipText.setBackgroundColor(ContextCompat.getColor(zipText.context, R.color.im_accent))
+            } else  {
+                zipText.setBackgroundColor(ContextCompat.getColor(zipText.context, R.color.white))
             }
             zipText.text = zip
         }

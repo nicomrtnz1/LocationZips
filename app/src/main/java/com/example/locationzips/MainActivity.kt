@@ -15,10 +15,5 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        val btn = binding.searchButton
-//        btn.setOnClickListener {
-//            btn.text = "haha"
-//            Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show()
-//        }
     }
 }
