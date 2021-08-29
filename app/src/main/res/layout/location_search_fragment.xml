@@ -7,15 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.LocationSearch">
 
-
     <EditText
         android:id="@+id/city"
         android:layout_width="300dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/vertical_margin"
         android:layout_marginStart="@dimen/vertical_margin"
+        android:layout_marginTop="@dimen/vertical_margin"
         android:layout_marginEnd="@dimen/vertical_margin"
         android:ems="10"
+        android:fontFamily="@font/marvel"
         android:hint="City Name"
         android:inputType="textPersonName"
         android:text=""
@@ -31,6 +31,7 @@
         android:layout_marginTop="@dimen/vertical_margin"
         android:layout_marginEnd="@dimen/vertical_margin"
         android:ems="10"
+        android:fontFamily="@font/marvel"
         android:hint="@string/state"
         android:inputType="textPersonName"
         android:text=""
@@ -42,16 +43,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/button_padding"
-        android:text="@string/search"
         android:backgroundTint="@color/im_secondary"
+        android:fontFamily="@font/marvel"
+        android:text="@string/search"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/city" />
 
+    <TextView
+        android:id="@+id/results"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/marvel"
+        android:text="@string/results"
+        app:layout_constraintBottom_toTopOf="@+id/zipList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/zipList"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="554dp"
         android:layout_marginStart="@dimen/vertical_margin"
         android:layout_marginTop="@dimen/vertical_margin"
         android:layout_marginEnd="@dimen/vertical_margin"
@@ -63,6 +78,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
         app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/zip_code_view" />
+        tools:listitem="@layout/zip_code_view" >
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
