@@ -13,6 +13,8 @@
         android:layout_marginStart="@dimen/horizontal_margin"
         android:layout_marginEnd="@dimen/horizontal_margin"
         android:backgroundTint="@color/im_secondary"
+        android:fontFamily="@font/marvel"
+        android:includeFontPadding="true"
         android:paddingStart="@dimen/button_padding"
         android:paddingEnd="@dimen/button_padding"
         android:text="@string/start"
@@ -75,7 +77,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/iron_man_arc_reactor" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="242dp"
+        android:layout_height="46dp"
+        android:fontFamily="@font/marvel"
+        android:text="Get City Zipcodes "
+        android:textAlignment="center"
+        android:textColor="@color/im_primary"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/titleImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--</FrameLayout>-->
