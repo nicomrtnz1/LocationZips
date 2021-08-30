@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import androidx.core.content.ContextCompat.getSystemService
 import com.example.locationzips.databinding.LocationSearchFragmentBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -36,11 +35,13 @@ class LocationSearch : Fragment() {
         val btn = binding.button
         val cityTextView = binding.city
         val stateTextView = binding.state
+        val progressBar = binding.progressBar
 
         btn.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 viewModel?.updateZips(cityTextView.text.toString(), stateTextView.text.toString())
             }
+            progressBar.visibility = View.VISIBLE
             hideKeyboard()
         }
         return root
@@ -48,12 +49,13 @@ class LocationSearch : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val progressBar = binding.progressBar
         viewModel = activity?.run {
             ViewModelProvider(this)[LocationSearchViewModel::class.java]
         }
 
         viewModel?.zip?.observe(viewLifecycleOwner, { zips ->
+            progressBar.visibility = View.GONE
             binding.zipList.adapter = ZipCodeAdapter(zips)
         })
     }

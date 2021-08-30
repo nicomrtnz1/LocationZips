@@ -18,7 +18,7 @@
         android:ems="10"
         android:fontFamily="@font/marvel"
         android:hint="City Name"
-        android:inputType="textPersonName"
+        android:inputType="textCapWords"
         android:text=""
         app:layout_constraintEnd_toStartOf="@+id/state"
         app:layout_constraintHorizontal_bias="0.457"
@@ -34,8 +34,9 @@
         android:ems="10"
         android:fontFamily="@font/marvel"
         android:hint="@string/state"
-        android:inputType="textPersonName"
+        android:inputType="textCapCharacters"
         android:text=""
+        android:maxLength="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,31 +57,51 @@
         android:id="@+id/results"
         android:layout_width="59dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:fontFamily="@font/marvel"
         android:text="@string/results"
-        app:layout_constraintBottom_toTopOf="@+id/zipList"
+        app:layout_constraintBottom_toTopOf="@+id/resultsContainer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/zipList"
+    <FrameLayout
+        android:id="@+id/resultsContainer"
         android:layout_width="0dp"
-        android:layout_height="554dp"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/vertical_margin"
         android:layout_marginTop="@dimen/vertical_margin"
         android:layout_marginEnd="@dimen/vertical_margin"
         android:layout_marginBottom="@dimen/vertical_margin"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/zip_code_view" >
+        app:layout_constraintVertical_bias="1.0">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="false"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/zipList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/zip_code_view">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
